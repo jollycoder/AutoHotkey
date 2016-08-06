@@ -1,4 +1,4 @@
-WinLangArray := [ {title: "ahk_class Notepad", lang: "ru"}
+WinLangArray := [ {title: "Безымянный — Блокнот", lang: "ru"}
                 , {title: "ahk_class WordPadClass", lang: "en"}  ]
                 
 handler := Func("ChangeLayoutWhenActive").Bind(WinLangArray)
