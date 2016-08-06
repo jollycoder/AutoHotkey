@@ -20,7 +20,7 @@ ChangeLayoutWhenActive(winData)  {
    }
 }
 
-ShellProc(handler, nCode, wParam)  {
+ShellProc(handler, nCode)  {
    if ( nCode = (HSHELL_WINDOWACTIVATED := 4) )
       SetTimer, % handler, -10
 }
