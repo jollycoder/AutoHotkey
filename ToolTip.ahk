@@ -27,7 +27,7 @@ class ToolTip  {
       static WS_POPUP := 0x80000000, WS_EX_TOPMOST := 8, WS_EX_TRANSPARENT := 0x20
            , TTS_NOPREFIX := 2, TTS_ALWAYSTIP := 1, TTS_BALLOON := 0x40, TTS_CLOSE := 0x80
            , TTF_TRACK := 0x20, TTF_ABSOLUTE := 0x80, szTI := A_PtrSize = 4 ? 48 : 72
-     
+    
       VarSetCapacity(TOOLINFO, szTI, 0)
       this.pTI := &TOOLINFO
       NumPut(szTI, TOOLINFO)
