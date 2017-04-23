@@ -1,14 +1,3 @@
-#Persistent
-myToolTip := new ToolTip({ title: "Title"
-                         , text: "I'm the colored TrayTip!"
-                         , icon: 1  ; icon Info
-                         , CloseButton: true
-                         , TrayTip: true
-                         , FontName: "Comic Sans MS"
-                         , FontSize: 20
-                         , TextColor: "Navy"
-                         , BackColor: 0xFFA500 })
-
 class ToolTip  {
 /*
 Версия: 1.04
