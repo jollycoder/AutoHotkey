@@ -16,3 +16,5 @@ myToolTip := new ToolTip({ title: "Title"
 ```
 Результат:  
 ![TrayTip](http://i.imgur.com/SMhcrkd.jpg)
+  
+Также примеры использования приводятся в файлах example1.ahk и example2.ahk. Для их запуска необходимо файл ToolTip.ahk положить в папку скрипта, либо удалить из примеров строку #Include %A_ScriptDir%\ToolTip.ahk и дописать класс непосредственно в код примера.
