@@ -15,7 +15,7 @@ myToolTip := new ToolTip({ title: "Title"
                          , BackColor: 0xFFA500 })
 ```
 Результат:  
-![TrayTip](http://i.imgur.com/SMhcrkd.jpg)
+![TrayTip](http://i.imgur.com/6JWVAUm.jpg)
   
 Также примеры использования приводятся в файлах [example1.ahk](https://github.com/jollycoder/AutoHotkey/blob/ToolTip-%D1%81%D0%BE-%D1%81%D0%B2%D0%BE%D0%B8%D0%BC-%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC-%D0%B8-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%BC/example1.ahk) и [example2.ahk](https://github.com/jollycoder/AutoHotkey/blob/ToolTip-%D1%81%D0%BE-%D1%81%D0%B2%D0%BE%D0%B8%D0%BC-%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC-%D0%B8-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%BC/example2.ahk). Для их запуска необходимо файл [ToolTip.ahk](https://github.com/jollycoder/AutoHotkey/blob/ToolTip-%D1%81%D0%BE-%D1%81%D0%B2%D0%BE%D0%B8%D0%BC-%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC-%D0%B8-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%BC/ToolTip.ahk) положить в папку скрипта, либо удалить из примеров строку
 ```ahk
