@@ -11,6 +11,7 @@ myToolTip := new ToolTip({ title: "Title"
 
 class ToolTip  {
 /*
+Версия: 1.04
 Описание и примеры использования (GitHub): https://goo.gl/51pZeA
 Автор teadrinker (на GitHub jollycoder), email dfiveg@mail.ru, skype dmitry_fiveg
 */
