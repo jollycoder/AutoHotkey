@@ -14,5 +14,5 @@ myToolTip := new ToolTip({ title: "Title"
                          , TextColor: "Navy"
                          , BackColor: 0xFFA500 })
 ```
-### Результат:  
+Результат:  
 ![TrayTip](http://i.imgur.com/SMhcrkd.jpg)
