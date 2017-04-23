@@ -21,7 +21,7 @@ myToolTip := new ToolTip({ title: "Title"
 ```ahk
 #Include %A_ScriptDir%\ToolTip.ahk
 ```
-и дописать класс непосредственно в код примера.
+и дописать [класс](https://raw.githubusercontent.com/jollycoder/AutoHotkey/ToolTip-%D1%81%D0%BE-%D1%81%D0%B2%D0%BE%D0%B8%D0%BC-%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC-%D0%B8-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%BC/ToolTip.ahk) непосредственно в код примера.
 ### Описание
 При создании экземпляра объекта в конструктор передаётся ассоциативный массив с опциями.
 Возможные ключи и их псевдонимы:
