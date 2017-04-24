@@ -4,7 +4,6 @@
 ### Пример использования:  
 Код:  
 ```ahk
-#Persistent
 myToolTip := new ToolTip({ title: "Title"
                          , text: "I'm the colored TrayTip!"
                          , icon: 1  ; icon Info
