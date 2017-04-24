@@ -32,7 +32,7 @@ myToolTip := new ToolTip({ title: "Title"
 *CloseButton* (или *close*) — true или false  
 *transparent* (или *trans*) — true или false, указывает, будет ли ToolTip прозрачен для кликов мыши  
 *ShowNow* (или *now*) — true или false, показывать или не показывать ToolTip при создании экземпляра объекта  
-    Если параметр не указан, ToolTip будет показан сразу же.
+\   Если параметр не указан, ToolTip будет показан сразу же.
 *x, y* — координаты, если не указаны, ToolTip появится вблизи курсора  
 *BalloonTip* (или *balloon*, или *ball*) — true или false, BalloonTip — это ToolTip с хвостиком  
 *TrayTip* (или *tray*) — будет показан BalloonTip у иконки скрипта в трее, параметры x, y, и BalloonTip игнорируются.  
