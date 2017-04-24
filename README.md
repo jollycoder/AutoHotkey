@@ -26,27 +26,21 @@ myToolTip := new ToolTip({ title: "Title"
 При создании экземпляра объекта в конструктор передаётся ассоциативный массив с опциями.
 Возможные ключи и их псевдонимы:
 
-*title*  
-*text*  
-*icon* (возможные значения: 1 — Info, 2 — Warning; 3 — Error; n > 3 — предполагается hIcon)  
-*CloseButton* (или *close*) — true или false  
-*transparent* (или *trans*) — true или false, указывает, будет ли ToolTip прозрачен для кликов мыши  
-  
-*ShowNow* (или *now*) — true или false, показывать или не показывать ToolTip при создании экземпляра объекта. Если параметр не указан, ToolTip будет показан сразу же.  
-  
-*x, y* — координаты, если не указаны, ToolTip появится вблизи курсора  
-*BalloonTip* (или *balloon*, или *ball*) — true или false, BalloonTip — это ToolTip с хвостиком  
-  
-*TrayTip* (или *tray*) — будет показан BalloonTip у иконки скрипта в трее, параметры x, y, и BalloonTip игнорируются. Если указан ключ *TrayTip*, удалить экземпляр объекта можно либо методом *Destroy()*, либо указав TimeOut с отрицателным значением. Если нет, тогда можно просто прировнять ссылку на объект пустому значению.  
-  
-*FontName* (или *font*)  
-*FontSize* (или *size*)  
-*FontStyle* (или *style*) — bold, italic, underline, strikeout в любом сочетании через пробел  
-  
-*TimeOut* (или *time*) — время в милисекундах, через которое ToolTip будет скрыт, если число положительное, либо уничтожен, если отрицательное.  
-  
-*BackColor* (или *back*) — цвет фона  
-*TextColor* (или *color*) — цвет текста  
+* *title*  
+* *text*  
+* *icon* (возможные значения: 1 — Info, 2 — Warning; 3 — Error; n > 3 — предполагается hIcon)  
+* *CloseButton* (или *close*) — true или false  
+* *transparent* (или *trans*) — true или false, указывает, будет ли ToolTip прозрачен для кликов мыши  
+* *ShowNow* (или *now*) — true или false, показывать или не показывать ToolTip при создании экземпляра объекта. Если параметр не указан, ToolTip будет показан сразу же.  
+* *x, y* — координаты, если не указаны, ToolTip появится вблизи курсора  
+* *BalloonTip* (или *balloon*, или *ball*) — true или false, BalloonTip — это ToolTip с хвостиком  
+* *TrayTip* (или *tray*) — будет показан BalloonTip у иконки скрипта в трее, параметры x, y, и BalloonTip игнорируются. Если указан ключ *TrayTip*, удалить экземпляр объекта можно либо методом *Destroy()*, либо указав TimeOut с отрицателным значением. Если нет, тогда можно просто прировнять ссылку на объект пустому значению.  
+* *FontName* (или *font*)  
+* *FontSize* (или *size*)  
+* *FontStyle* (или *style*) — bold, italic, underline, strikeout в любом сочетании через пробел  
+* *TimeOut* (или *time*) — время в милисекундах, через которое ToolTip будет скрыт, если число положительное, либо уничтожен, если отрицательное.  
+* *BackColor* (или *back*) — цвет фона  
+* *TextColor* (или *color*) — цвет текста  
   
 Для указания цвета можно использовать литеральные названия, перечисленные [здесь](https://autohotkey.com/docs/commands/Progress.htm#colors).
 В этом случае название должно быть в кавычках.
