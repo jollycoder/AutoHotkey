@@ -26,9 +26,9 @@ myToolTip := new ToolTip({ title: "Title"
 При создании экземпляра объекта в конструктор передаётся ассоциативный массив с опциями.
 Возможные ключи и их псевдонимы:
 
-*title*
-*text*
-*icon* (возможные значения: 1 — Info, 2 — Warning; 3 — Error; n > 3 — предполагается hIcon)
+*title*  
+*text*  
+*icon* (возможные значения: 1 — Info, 2 — Warning; 3 — Error; n > 3 — предполагается hIcon)  
 *CloseButton* (или *close*) — true или false
 transparent (или trans) — true или false, указывает, будет ли ToolTip прозрачен для кликов мыши
 ShowNow (или now) — true или false, показывать или не показывать ToolTip при создании экземпляра объекта
