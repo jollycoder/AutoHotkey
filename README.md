@@ -28,7 +28,7 @@ myToolTip := new ToolTip({ title: "Title"
 ```
 title
 text
-icon (1 — Info, 2 — Warning; 3 — Error; n > 3 — предполагается hIcon)
+icon (возможные значения: 1 — Info, 2 — Warning; 3 — Error; n > 3 — предполагается hIcon)
 CloseButton (или close) — true или false
 transparent (или trans) — true или false, указывает, будет ли ToolTip прозрачен для кликов мыши
 ShowNow (или now) — true или false, показывать или не показывать ToolTip при создании экземпляра объекта
