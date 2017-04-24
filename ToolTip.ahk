@@ -1,8 +1,66 @@
 class ToolTip  {
 /*
 Версия: 1.04
-Описание и примеры использования (GitHub): https://goo.gl/51pZeA
-Автор teadrinker (на GitHub jollycoder), email dfiveg@mail.ru, skype dmitry_fiveg
+Добавлено:
+1. Псевдонимы ключей для краткости (можно, например, вместо CloseButton указать close).
+   Возможные ключи и псевдонимы перечислены ниже.
+2. Параметр ShowNow (или now) — показывать или нет ToolTip сразу после создания, 
+   возможные значения — true или false, если не указан, тогда по умолчанию true,
+   т. е. ToolTip будет показан сразу же.
+3. Добавлен параметр "timeout" к методу Show(x, y, timeout).
+   Если таймаут задан положительным числом, ToolTip будет скрыт через указанное время
+   в милисекундах, если отрицательным, экземпляр объекта будет удалён без возможности
+   дальнейшего использования.
+   Если параметр не указан, ToolTip будет показываться до вызова Hide() или Destroy().
+
+Изменено:
+1. Опцию TimeOut при создании объекта можно указать в случае, если нужно показать
+   ToolTip сразу после создания. Если TimeOut задан положительным числом, ToolTip будет
+   скрыт через указанное время в милисекундах, если отрицательным, экземпляр объекта
+   будет удалён без возможности дальнейшего использования.
+
+При создании экземпляра объекта в конструктор передаётся ассоциативный массив с опциями.
+Возможные ключи и их псевдонимы:
+
+title
+text
+icon (1 — Info, 2 — Warning; 3 — Error; n > 3 — предполагается hIcon)
+CloseButton (или close) — true или false
+transparent (или trans) — true или false, указывает, будет ли ToolTip прозрачен для кликов мыши
+ShowNow (или now) — true или false, показывать или не показывать ToolTip при создании экземпляра объекта
+   Если параметр не указан, ToolTip будет показан сразу же.
+x, y — координаты, если не указаны, ToolTip появится вблизи курсора
+BalloonTip (или balloon, или ball) — true или false, BalloonTip — это ToolTip с хвостиком
+TrayTip (или tray) — будет показан BalloonTip у иконки скрипта в трее, параметры x, y, и BalloonTip игнорируются
+   Если указан ключ TrayTip, удалить экземпляр объекта можно либо методом Destroy(),
+      либо указав TimeOut с отрицателным значением.
+   Если нет, тогда можно просто прировнять ссылку на объект пустому значению.
+FontName (или font)
+FontSize (или size)
+FontStyle (или style) — bold, italic, underline, strikeout в любом сочетании через пробел
+TimeOut (или time) — время в милисекундах, через которое ToolTip будет скрыт, если число положительное,
+   либо уничтожен, если отрицательное
+BackColor (или back) — цвет фона
+TextColor (или color) — цвет текста
+   
+Для указания цвета можно использовать литеральные названия, перечисленные здесь:
+https://autohotkey.com/docs/commands/Progress.htm#colors
+В этом случае название должно быть в кавычках.
+
+Ключи можно задавать в любом порядке и в любой комбинации, как показано в примерах использования.
+Если указан ключ TrayTip, удалить экземпляр объекта можно только методом Destroy(),
+если нет, тогда можно просто прировнять ссылку на объект пустому значению.
+
+После создания экземпляра объекта можно:
+
+1. Изменить видимость, расположение и время показа — метод Show(x, y, timeout)
+   x и y — координаты, если пустые значения — ToolTip будет показан возле курсора
+   timeout — время в милисекундах, через которое ToolTip будет скрыт, если число положительное,
+   либо уничтожен, если отрицательное
+2. Скрыть ToolTip — метод Hide()
+3. Изменить текст — метод SetText(text)
+4. Изменить иконку и заголовок — метод SetTitle(icon, title)
+5. Уничтожить экземпляр объекта — метод Destroy()
 */
    __New( options )  {
       this.ShowNow := true
@@ -27,7 +85,7 @@ class ToolTip  {
       static WS_POPUP := 0x80000000, WS_EX_TOPMOST := 8, WS_EX_TRANSPARENT := 0x20
            , TTS_NOPREFIX := 2, TTS_ALWAYSTIP := 1, TTS_BALLOON := 0x40, TTS_CLOSE := 0x80
            , TTF_TRACK := 0x20, TTF_ABSOLUTE := 0x80, szTI := A_PtrSize = 4 ? 48 : 72
-    
+     
       VarSetCapacity(TOOLINFO, szTI, 0)
       this.pTI := &TOOLINFO
       NumPut(szTI, TOOLINFO)
@@ -183,16 +241,14 @@ class ToolTip  {
       static WM_USER := 0x400, TTM_TRACKACTIVATE := WM_USER + 17
       this._SendMessage(TTM_TRACKACTIVATE, 0, this.pTI)
       if timer := this.TrayTimer  {
-         SetTimer, % timer, Off
+         try SetTimer, % timer, Delete
          this.TrayTimer := timer := ""
       }
    }
    
    Destroy()  {
-      if timer := this.TrayTimer  {
-         SetTimer, % timer, Off
-         this.TrayTimer := timer := ""
-      }
+      if timer := this.TrayTimer
+         SetTimer, % timer, Delete
       this.__Delete()
       this.SetCapacity(0)
       this.base := ""
