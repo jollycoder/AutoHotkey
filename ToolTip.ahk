@@ -43,6 +43,9 @@ https://autohotkey.com/docs/commands/Progress.htm#colors
 3. SetText(text) — изменение текста
 4. SetTitle(icon, title) — изменение иконки и заголовка
 5. Destroy() — уничтожение экземпляра объекта
+
+Описание и примеры использования (GitHub): https://goo.gl/51pZeA
+Автор teadrinker (на GitHub jollycoder), email dfiveg@mail.ru, skype dmitry_fiveg
 */
    __New( options )  {
       this.ShowNow := true
