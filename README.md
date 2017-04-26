@@ -12,6 +12,7 @@ myToolTip := new ToolTip({ title: "Title"
                          , FontSize: 20
                          , TextColor: "Navy"
                          , BackColor: 0xFFA500 })
+                         
 #Include %A_ScriptDir%\ToolTip.ahk
 ```
 Результат:  
