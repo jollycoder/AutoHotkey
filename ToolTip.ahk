@@ -1,6 +1,6 @@
 class ToolTip  {
 /*
-Версия: 1.04.01
+Версия: 1.05
 Описание и примеры использования (GitHub): https://goo.gl/51pZeA
 Автор teadrinker (на GitHub jollycoder), email dfiveg@mail.ru, skype dmitry_fiveg
 */
@@ -129,12 +129,15 @@ class ToolTip  {
    Show(x := "", y := "", timeout := "")  {
       static WM_USER := 0x400, TTM_TRACKACTIVATE := WM_USER + 17, TTM_TRACKPOSITION := WM_USER + 18
       
+      if (x = "TrayTimer")
+         Critical
+      
       if this.TrayTip  {
          this._GetTrayIconCoords(xTT, yTT)
-         if !this.TrayTimer  {
-            timer := ObjBindMethod(this, "Show")
+         if !this.SetTrayTimer  {
+            this.TrayTimer := timer := ObjBindMethod(this, "Show", "TrayTimer")
             SetTimer, % timer, 1000
-            this.TrayTimer := timer
+            this.SetTrayTimer := true
          }
          else  {
             this._CheckPosAboveTaskBar()
@@ -172,8 +175,8 @@ class ToolTip  {
       }
 
       if timeout  {
-         if timer := this.timer
-            try SetTimer, % timer, Delete
+         timer := this.timer
+         try SetTimer, % timer, Delete
          this.timer := timer := ObjBindMethod(this, timeout > 0 ? "Hide" : "Destroy")
          SetTimer % timer, % "-" . Abs(timeout)
       }
@@ -182,15 +185,14 @@ class ToolTip  {
    Hide()  {
       static WM_USER := 0x400, TTM_TRACKACTIVATE := WM_USER + 17
       this._SendMessage(TTM_TRACKACTIVATE, 0, this.pTI)
-      if timer := this.TrayTimer  {
-         try SetTimer, % timer, Delete
-         this.TrayTimer := timer := ""
+      if this.SetTrayTimer  {
+         this.SetTrayTimer := false
+         timer := this.TrayTimer
+         SetTimer, % timer, Delete
       }
    }
    
    Destroy()  {
-      if timer := this.TrayTimer
-         SetTimer, % timer, Delete
       this.__Delete()
       this.SetCapacity(0)
       this.base := ""
