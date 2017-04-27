@@ -16,12 +16,12 @@ x, y — координаты, если не указаны, ToolTip появи�
 BalloonTip (или balloon, или ball) — true или false, BalloonTip — это ToolTip с хвостиком
 TrayTip (или tray) — будет показан BalloonTip у иконки скрипта в трее, параметры x, y, и BalloonTip игнорируются
    Если указан ключ TrayTip, удалить экземпляр объекта можно либо методом Destroy(),
-      либо указав TimeOut с отрицателным значением.
+      либо указав Timeout с отрицателным значением.
    Если нет, тогда можно просто прировнять ссылку на объект пустому значению.
 FontName (или font)
 FontSize (или size)
 FontStyle (или style) — bold, italic, underline, strikeout в любом сочетании через пробел
-TimeOut (или time) — время в милисекундах, через которое ToolTip будет скрыт, если число положительное,
+Timeout (или time) — время в милисекундах, через которое ToolTip будет скрыт, если число положительное,
    либо уничтожен, если отрицательное
 BackColor (или back) — цвет фона
 TextColor (или color) — цвет текста
@@ -52,13 +52,13 @@ https://autohotkey.com/docs/commands/Progress.htm#colors
       for k, v in options
          this[k] := v
       this._CreateToolTip()
-      ( this.ShowNow && this.Show(this.x, this.y, this.TimeOut) )
+      ( this.ShowNow && this.Show(this.x, this.y, this.Timeout) )
    }
    
    __Set(key, value)  {
       static PsevdoKeys := { close: "CloseButton", trans: "transparent", size: "FontSize"
                            , balloon: "BalloonTip", ball: "BalloonTip", tray: "TrayTip"
-                           , style: "FontStyle", time: "TimeOut", font: "FontName"
+                           , style: "FontStyle", time: "Timeout", font: "FontName"
                            , back: "BackColor", color: "TextColor", now: "ShowNow" }
                            
       for k, v in PsevdoKeys
