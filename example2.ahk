@@ -9,7 +9,7 @@ myTrayTip := new ToolTip({ text: "Модифицированный TrayTip"
 
 myToolTip := new ToolTip({ text: "Это модифицированный ToolTip.`nОн прозрачен для кликов мыши."
                          , title: "Кастомная иконка"
-                         , TimeOut: 2500
+                         , Timeout: 2500
                          , Icon: hIcon := CreateIconFromBase64(GetIcon(), 32)
                          , transparent: true    ; если true — окно прозрачно для мыши
                          , BalloonTip: true
@@ -25,7 +25,7 @@ ColoredTip:= new ToolTip({ text: "Я цветной ToolTip!`nЯ исчезну 
                          , BackColor: 0xFFA500
                          , FontName: "Comic Sans MS"
                          , FontSize: 20
-                         , TimeOut: -7000 })  ; будет автоматически удалён через 7000 мс
+                         , Timeout: -7000 })  ; будет автоматически удалён через 7000 мс
                          
 oTimer := Func("Timer").Bind(ColoredTip)
 SetTimer, % oTimer, 1000  ; этот таймер только для изменения текста
