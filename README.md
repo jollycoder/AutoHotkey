@@ -39,7 +39,7 @@ myToolTip := new ToolTip({ title: "Title"
 * *FontName* (или *font*)  
 * *FontSize* (или *size*)  
 * *FontStyle* (или *style*) — bold, italic, underline, strikeout в любом сочетании через пробел  
-* *TimeOut* (или *time*) — время в милисекундах, через которое ToolTip будет скрыт, если число положительное, либо уничтожен, если отрицательное.  
+* *Timeout* (или *time*) — время в милисекундах, через которое ToolTip будет скрыт, если число положительное, либо уничтожен, если отрицательное.  
 * *BackColor* (или *back*) — цвет фона  
 * *TextColor* (или *color*) — цвет текста  
   
