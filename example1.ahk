@@ -3,7 +3,7 @@ myTrayTip := new ToolTip({ title: " Look!"
                          , FontSize: 18
                          , icon: 2            ; icon Warning
                          , TrayTip: true      ; будет отображаться возле иконки скрипта в трее
-                         , TimeOut: -4000     ; TrayTip будет удалён через 4 секунды
+                         , Timeout: -4000     ; TrayTip будет удалён через 4 секунды
                          , BackColor: 0x0055aa
                          , TextColor: "white" })
 Sleep, 2500
