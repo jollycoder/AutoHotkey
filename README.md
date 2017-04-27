@@ -44,6 +44,8 @@ myToolTip := new ToolTip({ title: "Title"
 * *TextColor* (или *color*) — цвет текста  
   
 Для указания цвета можно использовать литеральные названия, перечисленные в этой таблице:  
+  
+  
 ![ColorNames](http://i.imgur.com/lHP0s9n.jpg)  
 В этом случае название должно быть в кавычках. Иначе цвет должен быть указан числом в [RGB](https://msdn.microsoft.com/ru-ru/library/dd355244.aspx).
   
