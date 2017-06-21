@@ -62,3 +62,5 @@ timeout — время в милисекундах, через которое To
 * *SetText(text)* — изменение текста
 * *SetTitle(icon, title)* — изменение иконки и заголовка
 * *Destroy()* — уничтожение экземпляра объекта
+
+![TrayTip](https://i.imgur.com/stqqssK.png)
